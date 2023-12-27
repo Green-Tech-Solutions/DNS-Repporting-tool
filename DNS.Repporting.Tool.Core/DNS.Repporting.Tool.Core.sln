@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNS.Repporting.Tool.Core", "DNS.Repporting.Tool.Core.csproj", "{E3734481-C799-4FFE-B94C-9D22EB52847A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNS.Repporting.Tool.Core", "DNS.Repporting.Tool.Core.csproj", "{E3734481-C799-4FFE-B94C-9D22EB52847A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNS.Repporting.Tool.Models", "..\DNS.Repporting.Tool.Models\DNS.Repporting.Tool.Models.csproj", "{618A9793-AB7F-4996-A2B8-D7BBADFE2B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNS.Repporting.Tool.ApiCaller", "..\DNS.Repporting.Tool.ApiCaller\DNS.Repporting.Tool.ApiCaller.csproj", "{5E558C9C-FF84-48DE-BE53-82536FF4B92B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{E3734481-C799-4FFE-B94C-9D22EB52847A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3734481-C799-4FFE-B94C-9D22EB52847A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3734481-C799-4FFE-B94C-9D22EB52847A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618A9793-AB7F-4996-A2B8-D7BBADFE2B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618A9793-AB7F-4996-A2B8-D7BBADFE2B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618A9793-AB7F-4996-A2B8-D7BBADFE2B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618A9793-AB7F-4996-A2B8-D7BBADFE2B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E558C9C-FF84-48DE-BE53-82536FF4B92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E558C9C-FF84-48DE-BE53-82536FF4B92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E558C9C-FF84-48DE-BE53-82536FF4B92B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E558C9C-FF84-48DE-BE53-82536FF4B92B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
