@@ -24,13 +24,12 @@ namespace DNS.Repporting.Tool.Core
                 .ConfigureServices((context, services) =>
                 {
                     services.AddTransient<IRapportService, RapportService>();
+                    services.AddSingleton<IConfigurationService, ConfigurationService>();
                 }).UseSerilog()
                 .Build();
 
             var svc = ActivatorUtilities.CreateInstance<RapportService>(host.Services);
             svc.CreateRapport();
-
-
             Log.Logger.Information("Application Ending");
             Log.CloseAndFlush();
         }

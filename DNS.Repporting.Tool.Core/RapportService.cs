@@ -1,11 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DNS.Repporting.Tool.Core
 {
@@ -13,17 +7,22 @@ namespace DNS.Repporting.Tool.Core
     {
         private readonly ILogger<RapportService> _log;
         private readonly IConfiguration _config;
+        private readonly IConfigurationService _configurationService;
 
-        public RapportService(ILogger<RapportService> log, IConfiguration config)
+        public RapportService(ILogger<RapportService> log, IConfiguration config, IConfigurationService configurationService)
         {
             _log = log;
             _config = config;
+            _configurationService = configurationService;
         }
 
         public void CreateRapport()
         {
             _log.LogInformation("Creating rapport");
             _log.LogInformation(_config.GetValue<string>("configText"));
+
+            _configurationService.SetupConfigurations();
+            
         }
     }
 }
