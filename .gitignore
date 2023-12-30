@@ -45,6 +45,7 @@ x64/
 *.scc
 *.vsidx
 *.v2
+*.bin
 
 # Visual C++ cache files
 ipch/

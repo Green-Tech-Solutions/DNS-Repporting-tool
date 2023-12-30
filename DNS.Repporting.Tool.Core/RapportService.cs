@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DNS.Repporting.Tool.Core
 {
-    public class RapportService
+    public class RapportService : IRapportService
     {
         private readonly ILogger<RapportService> _log;
         private readonly IConfiguration _config;
@@ -23,7 +23,7 @@ namespace DNS.Repporting.Tool.Core
         public void CreateRapport()
         {
             _log.LogInformation("Creating rapport");
-            Console.ReadLine();
+            _log.LogInformation(_config.GetValue<string>("configText"));
         }
     }
 }
