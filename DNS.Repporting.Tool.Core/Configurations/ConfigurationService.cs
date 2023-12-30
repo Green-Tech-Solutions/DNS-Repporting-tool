@@ -17,5 +17,7 @@ public class ConfigurationService : IConfigurationService
 
     public void SetupConfigurations()
     {
+        _log.LogInformation("Setting up Configurations");
+
     }
 }

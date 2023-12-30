@@ -21,7 +21,7 @@ namespace DNS.Repporting.Tool.Core
             _log.LogInformation("Creating rapport");
             _log.LogInformation(_config.GetValue<string>("configText"));
 
-            _configurationService.SetupConfigurations();
+          //  _configurationService.SetupConfigurations();
             
         }
     }
