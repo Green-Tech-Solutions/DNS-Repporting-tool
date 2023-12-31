@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DNS.Repporting.Tool.ApiCaller\DNS.Repporting.Tool.ApiCaller.csproj" />
     <ProjectReference Include="..\DNS.Repporting.Tool.Models\DNS.Repporting.Tool.Models.csproj" />
   </ItemGroup>
 

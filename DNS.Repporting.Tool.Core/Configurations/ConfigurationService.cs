@@ -1,4 +1,5 @@
-﻿using DNS.Repporting.Tool.Models;
+﻿using DNS.Repporting.Tool.Core.Rapport;
+using DNS.Repporting.Tool.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
