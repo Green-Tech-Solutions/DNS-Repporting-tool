@@ -20,8 +20,9 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
+    - name: set permission dependencies
       run: chmod +x /home/runner/work/DNS-Repporting-tool/DNS-Repporting-tool/.github/workflows/my-script.sh
+    - name: Restore dependencies
       run: /home/runner/work/DNS-Repporting-tool/DNS-Repporting-tool/.github/workflows/my-script
     # - name: Build
     #   run: cd .. cd .. cd DNS.Repporting.Tool.Core dotnet build --no-restore
