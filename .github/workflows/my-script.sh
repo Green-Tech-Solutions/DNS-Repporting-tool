@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/bin/sh
+ls
 cd ..
 cd ..
 cd DNS.Repporting.Tool.Core
