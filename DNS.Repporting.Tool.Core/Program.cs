@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DNS.Repporting.Tool.ApiCaller;
+using DNS.Repporting.Tool.Core.Rapport;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
@@ -7,7 +9,7 @@ namespace DNS.Repporting.Tool.Core
 {
     public class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var builder = new ConfigurationBuilder();
             BuildConfig(builder);
@@ -24,13 +26,13 @@ namespace DNS.Repporting.Tool.Core
                 .ConfigureServices((context, services) =>
                 {
                     services.AddTransient<IRapportService, RapportService>();
+                    services.AddSingleton<IConfigurationService, ConfigurationService>();
+                    services.AddSingleton<IApiService, ApiService>();
                 }).UseSerilog()
                 .Build();
 
             var svc = ActivatorUtilities.CreateInstance<RapportService>(host.Services);
-            svc.CreateRapport();
-
-
+            await svc.CreateRapportAsync();
             Log.Logger.Information("Application Ending");
             Log.CloseAndFlush();
         }
