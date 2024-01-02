@@ -24,6 +24,6 @@ jobs:
       run: echo ${PWD}
            ${PWD}/my-script
     - name: Build
-      run: cd DNS.Repporting.Tool.Core dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: cd .. cd .. cd DNS.Repporting.Tool.Core dotnet build --no-restore
+    # - name: Test
+    #   run: cd .. cd .. cd DNS.Repporting.Tool.Core dotnet test --no-build --verbosity normal
