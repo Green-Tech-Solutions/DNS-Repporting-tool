@@ -21,7 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: /.github/workflows/my-script
+      run: echo ${PWD}
+           ${PWD}/my-script
     - name: Build
       run: cd DNS.Repporting.Tool.Core dotnet build --no-restore
     - name: Test
