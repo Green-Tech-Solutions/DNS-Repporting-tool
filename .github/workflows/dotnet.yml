@@ -21,10 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: set permission dependencies
-      run: chmod +x /home/runner/work/DNS-Repporting-tool/DNS-Repporting-tool/.github/workflows/my-script.sh
-    - name: Restore dependencies
-      run: /home/runner/work/DNS-Repporting-tool/DNS-Repporting-tool/.github/workflows/my-script.sh
-    # - name: Build
-    #   run: cd .. cd .. cd DNS.Repporting.Tool.Core dotnet build --no-restore
+      run: chmod +x ${PWD}/.github/workflows/restoreScript.sh && ${PWD}/.github/workflows/restoreScript.sh
+    - name: Build
+      run: cd ${PWD}/DNS.Repporting.Tool.Core && dotnet build --no-restore
     # - name: Test
     #   run: cd .. cd .. cd DNS.Repporting.Tool.Core dotnet test --no-build --verbosity normal
