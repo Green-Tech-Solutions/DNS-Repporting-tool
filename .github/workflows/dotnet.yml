@@ -20,8 +20,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
-    - name: set permission dependencies
-      run: chmod +x ${PWD}/.github/workflows/restoreScript.sh && ${PWD}/.github/workflows/restoreScript.sh
+    - name: Restore Projects
+      run: cd ${PWD}/DNS.Repporting.Tool.Core && dotnet restore
     - name: Build
       run: cd ${PWD}/DNS.Repporting.Tool.Core && dotnet build --no-restore
     # - name: Test
