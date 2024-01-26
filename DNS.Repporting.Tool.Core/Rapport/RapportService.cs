@@ -1,5 +1,6 @@
 ﻿using DNS.Repporting.Tool.ApiCaller;
 using DNS.Repporting.Tool.Models;
+using DNS.Repporting.Tool.Core.Rapport.CreatePDF;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Xml.Linq;
@@ -32,6 +33,8 @@ namespace DNS.Repporting.Tool.Core.Rapport
             }
            
             //  _configurationService.SetupConfigurations();
+            CreatePDFService createPDFService = new CreatePDFService();
+            createPDFService.GenerateReppport();
 
         }
     }
