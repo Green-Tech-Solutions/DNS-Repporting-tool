@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+using QuestPDF;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using QuestPDF.Previewer;
 
 namespace DNS.Repporting.Tool.Core.Rapport.CreatePDF
 {
@@ -12,40 +11,25 @@ namespace DNS.Repporting.Tool.Core.Rapport.CreatePDF
     {
         public void GenerateReppport()
         {
+            // TODO: Please make sure that you are eligible to use the Community license.
+            // To learn more about the QuestPDF licensing, please visit:
+            // https://www.questpdf.com/pricing.html
+            Settings.License = LicenseType.Community;
 
-            Document.Create(container =>
-            {
-                container.Page(page =>
-                {
-                    page.Size(PageSizes.A4);
-                    page.Margin(2, Unit.Centimetre);
-                    page.Background(Colors.White);
-                    page.DefaultTextStyle(x => x.FontSize(20));
+            // For documentation and implementation details, please visit:
+            // https://www.questpdf.com/documentation/getting-started.html
+            // var model = InvoiceDocumentDataSource.GetInvoiceDetails();
+            // var document = new InvoiceDocument(model);
+            var document = new PDFRepport();
 
-                    page.Header()
-                        .Text("Hello PDF!")
-                        .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+            // Generate PDF file and show it in the default viewer
+            document.GeneratePdfAndShow();
 
-                    page.Content()
-                        .PaddingVertical(1, Unit.Centimetre)
-                        .Column(x =>
-                        {
-                            x.Spacing(20);
+            // Or open the QuestPDF Previewer and experiment with the document's design
+            // in real-time without recompilation after each code change
+            // https://www.questpdf.com/document-previewer.html
+            //document.ShowInPreviewer();
 
-                            x.Item().Text(Placeholders.LoremIpsum());
-                            x.Item().Image(Placeholders.Image(200, 100));
-                        });
-
-                    page.Footer()
-                        .AlignCenter()
-                        .Text(x =>
-                        {
-                            x.Span("Page ");
-                            x.CurrentPageNumber();
-                        });
-                });
-            })
-            .GeneratePdf("hello.pdf");
         }
     }
 }
